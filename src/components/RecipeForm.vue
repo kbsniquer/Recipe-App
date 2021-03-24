@@ -34,23 +34,12 @@
         <button class="btn btn-primary m-3" type="submit">Add Recipe</button>
       </div>
     </form>
-    <div class="recipe shadow-sm p-5 mt-5">
-      <h1>Your Recipes</h1>
-      <div class="card" v-for="(recipe, index) in recipes" :key="index + 1">
-        <h1>
-          {{ recipe.title }}
-        </h1>
-        <p>
-          {{ recipe.desc }}
-        </p>
-      </div>
-    </div>
   </div>
 </template>
 ^
 <script>
 export default {
-  name: "Recipe",
+  name: "RecipeForm",
   data: function() {
     return {
       recipes: [],

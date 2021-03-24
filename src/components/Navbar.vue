@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand" href="#">My Recipe App</a>
+    <a class="navbar-brand" href="">My Recipe App</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,10 +15,10 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">My Recipes</a>
+          <a class="nav-link" href="#/my-recipes">My Recipes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Add New Recipe</a>
+          <a class="nav-link" href="#/add-recipe">Add New Recipe</a>
         </li>
       </ul>
     </div>
