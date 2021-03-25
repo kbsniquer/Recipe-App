@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form @submit.prevent="addRecipe()" class="p-5">
+    <form @submit.prevent="addRecipe()" class="p-3">
       <h1>Add New Recipe</h1>
       <!-- Recipe title form group with label & input -->
       <div class="form-row p-2">
@@ -18,7 +18,8 @@
       </div>
       <!-- Row with dropdowns for types of recipes & cook times -->
       <div class="form-row-dropdowns">
-        <select name="recipeCookTimeDropdown">
+        <label for="recipeCookTimeDropdown">Cook Time</label>
+        <select name="recipeCookTimeDropdown" v-model="newRecipeTime">
           <option
             class="dropdown-item"
             v-for="(time, index) in recipeCookTimes[0]"
@@ -27,7 +28,8 @@
           >
         </select>
 
-        <select name="recipeCategoryDropdown">
+        <label for="recipeCookTimeDropdown">Recipe Category</label>
+        <select name="recipeCategoryDropdown" v-model="newRecipeCat">
           <option
             class="dropdown-item"
             v-for="(category, index) in recipeCategories[0]"
@@ -72,7 +74,7 @@
           </div>
         </div>
       </div>
-
+      <!-- Submit new recipe button -->
       <div>
         <button class="btn btn-primary m-3" type="submit">
           Add New Recipe
@@ -90,7 +92,6 @@ export default {
       recipes: [],
       recipeCategories: [
         {
-          select: "Select Category",
           breakfast: "Breakfast",
           lunch: "Lunch",
           dinner: "Dinner",
@@ -99,7 +100,6 @@ export default {
       ],
       recipeCookTimes: [
         {
-          select: "Select Cook Time",
           zeroToFifteen: "0 - 15 mins",
           fifteenToThirty: "15 - 30 mins",
           thirtyToFourtyFive: "30 - 45 mins",
@@ -109,6 +109,8 @@ export default {
       ],
       recipeIngredients: [],
       newRecipeTitle: "",
+      newRecipeTime: "",
+      newRecipeCat: "",
       newRecipeDesc: "",
     };
   },
@@ -117,6 +119,8 @@ export default {
       if (this.newRecipeTitle && this.newRecipeDesc) {
         let newRecipe = {
           title: this.newRecipeTitle,
+          time: this.newRecipeTime,
+          cat: this.newRecipeCat,
           desc: this.newRecipeDesc,
         };
         this.recipes.push(newRecipe);
@@ -145,15 +149,19 @@ form {
 select {
   border: 2px solid #00bef0;
   color: #00bef0;
+  padding: 0.5rem;
   margin: 0.5rem;
-  padding: 0.75rem;
+}
+label {
+  display: inline-block;
 }
 .control-label {
   float: left;
 }
 .form-row-dropdowns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 1rem;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  display: inline-block;
+  padding: 0.25rem;
 }
 </style>

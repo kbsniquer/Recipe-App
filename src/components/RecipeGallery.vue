@@ -13,6 +13,12 @@
         <p>
           {{ recipe.desc }}
         </p>
+        <p>
+          {{ recipe.time }}
+        </p>
+        <p>
+          {{ recipe.cat }}
+        </p>
       </div>
     </div>
   </div>
@@ -24,12 +30,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* .container {
-  background-color: #fed766;
-  padding: 5rem;
-}
-.card {
-  box-shadow: 0;
-} */
-</style>
+<style scoped></style>
