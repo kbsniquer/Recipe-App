@@ -107,7 +107,7 @@ export default {
           hourPlus: "1hr or more",
         },
       ],
-      recipeIngredients: [],
+      newRecipeIngredients: [],
       newRecipeTitle: "",
       newRecipeTime: "",
       newRecipeCat: "",
@@ -115,6 +115,12 @@ export default {
     };
   },
   methods: {
+    createIngredientsArray(newIngredients) {
+      return newIngredients
+        .replaceAll(" ", "")
+        .split(",")
+        .map((str) => ({ value: str }));
+    },
     addRecipe() {
       if (this.newRecipeTitle && this.newRecipeDesc) {
         let newRecipe = {
@@ -122,6 +128,7 @@ export default {
           time: this.newRecipeTime,
           cat: this.newRecipeCat,
           desc: this.newRecipeDesc,
+          ingredients: this.createIngredientsArray(this.newRecipeIngredients),
         };
         this.recipes.push(newRecipe);
 
