@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <form @submit.prevent="addRecipe()" class="shadow-sm p-5">
-      <h1>Create Your New Recipe</h1>
+      <h1>Add New Recipe</h1>
       <div class="form-group row p-2">
         <label for="recipeTitle" class="col-sm-3 col-form-label"
           >Recipe Title</label
@@ -36,7 +36,7 @@
     </form>
   </div>
 </template>
-^
+
 <script>
 export default {
   name: "RecipeForm",
@@ -50,10 +50,14 @@ export default {
   methods: {
     addRecipe() {
       if (this.newRecipeTitle && this.newRecipeDesc) {
-        this.recipes.push({
+        let newRecipe = {
           title: this.newRecipeTitle,
           desc: this.newRecipeDesc,
-        });
+        };
+        this.recipes.push(newRecipe);
+
+        // Update store
+        this.$store.commit("addRecipe", newRecipe);
       } else {
         alert("Please enter a new recipe!");
       }
