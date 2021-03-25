@@ -19,6 +19,11 @@
         <p>
           {{ recipe.cat }}
         </p>
+        <ul>
+          <li v-for="(ing, index) in recipe.ingredients" :key="index">
+            {{ ing.value }}
+          </li>
+        </ul>
       </div>
     </div>
   </div>
