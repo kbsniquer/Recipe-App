@@ -23,3 +23,13 @@ export default {
   name: "RecipeGallery",
 };
 </script>
+
+<style scoped>
+/* .container {
+  background-color: #fed766;
+  padding: 5rem;
+}
+.card {
+  box-shadow: 0;
+} */
+</style>

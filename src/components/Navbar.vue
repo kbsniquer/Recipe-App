@@ -28,9 +28,6 @@
 <style scoped>
 .navbar {
   background-color: none;
-}
-.nav-link,
-.navbar-brand {
-  color: black;
+  padding-bottom: 0;
 }
 </style>
