@@ -28,6 +28,6 @@
 <style scoped>
 .navbar {
   background-color: none;
-  padding-bottom: 0;
+  padding: 1rem;
 }
 </style>

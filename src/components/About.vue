@@ -18,6 +18,13 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "About",
+  title: "Recipe App",
+};
+</script>
+
 <style scoped>
 .aboutText {
   padding: 5rem;

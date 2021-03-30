@@ -87,6 +87,7 @@
 <script>
 export default {
   name: "RecipeForm",
+  title: "Add a Recipe",
   data: function() {
     return {
       recipes: [],
@@ -116,10 +117,7 @@ export default {
   },
   methods: {
     createIngredientsArray(newIngredients) {
-      return newIngredients
-        .replaceAll(" ", "")
-        .split(",")
-        .map((str) => ({ value: str }));
+      return newIngredients.split(", ").map((str) => ({ value: str }));
     },
     addRecipe() {
       if (this.newRecipeTitle && this.newRecipeDesc) {
@@ -140,7 +138,10 @@ export default {
 
       // Clear out the input fields after submission
       this.newRecipeTitle = "";
+      this.newRecipeCat = "";
+      this.newRecipeIngredients = "";
       this.newRecipeDesc = "";
+      this.newRecipeTime = "";
     },
   },
 };
