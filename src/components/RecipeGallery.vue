@@ -1,70 +1,70 @@
 <template>
   <div class="container">
-    <div class="recipe shadow-sm p-5 mt-5">
-      <h1>Your Recipes</h1>
-      <div
-        class="card"
-        v-for="(recipe, index) in this.$store.getters.recipes"
-        :key="index + 1"
-      >
-        <h1 class="recipeTitle">
-          {{ recipe.title }}
-        </h1>
-        <div class="row p-3">
-          <div class="col-6">
-            <div class="recipeTime">
-              <i class="far fa-clock"></i>
-              {{ recipe.time }}
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="recipeCategory">
-              <i class="fas fa-utensils"></i>
-              {{ recipe.cat }}
-            </div>
-          </div>
-        </div>
-        <p class="recipeDesc">
-          {{ recipe.desc }}
-        </p>
-        <ul class="recipeList">
-          <li v-for="(ing, index) in recipe.ingredients" :key="index">
-            {{ ing.value }}
-          </li>
-        </ul>
-      </div>
+    <div class="recipeContainerLabel">
+      <h1>
+        <span>My Recipes</span>
+        <a href="#/add-recipe"
+          ><span
+            class="disabledAddNew"
+            style="background-color: #d35f2d; color: white;"
+            >Add New Recipe</span
+          ></a
+        >
+      </h1>
+    </div>
+    <div class="recipeContainer">
+      <p class="emptyRecipeMsg" v-if="this.$store.getters.recipes.length === 0">
+        {{ emptyRecipeMsg }}
+      </p>
+      <RecipeCard />
     </div>
   </div>
 </template>
 
 <script>
+import RecipeCard from "./RecipeCard";
+
 export default {
   name: "RecipeGallery",
   title: "Recipe Gallery",
+  components: {
+    RecipeCard,
+  },
+  data() {
+    return {
+      emptyRecipeMsg:
+        "Uh oh! You don't have any recipes added yet.  Please go to ADD NEW RECIPE to add your first one today!",
+    };
+  },
 };
 </script>
 
 <style scoped>
-.card {
+.recipeContainer,
+.recipeContainerLabel h1 span {
+  background-color: #fcfcfc;
+  color: #357266;
+}
+.recipeContainer {
+  border-radius: 0 0.75rem 0.75rem 0.75rem;
+  box-shadow: 0px 8px 15px -8px rgba(64, 67, 97, 0.5);
+  margin: 0;
+}
+.recipeContainerLabel h1 span {
   padding: 1rem;
-  margin: 1rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
-.recipeTitle {
-  font-size: 3rem;
-}
-.recipeTime {
-  text-align: right;
-}
-.recipeCategory {
+.recipeContainerLabel {
   text-align: left;
+  text-transform: uppercase;
+  display: inline;
 }
-.recipeDesc {
+.emptyRecipeMsg {
   margin: 0 auto;
   width: 75%;
-}
-.recipeList {
-  display: inline;
-  list-style-type: none;
-  padding-right: 20px;
+  padding: 3rem;
+  font-size: 1.5rem;
 }
 </style>

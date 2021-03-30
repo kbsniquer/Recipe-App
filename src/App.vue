@@ -20,31 +20,20 @@ export default {
 </script>
 
 <style>
+a {
+  text-decoration: none;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-}
-label {
-  color: #00bef0;
-  font-weight: bolder;
-}
-.btn {
-  background-color: transparent;
-  border: 2px solid #00bef0;
-  color: #00bef0;
-  padding: 10px 20px;
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-  border-radius: 25px;
-}
-.btn:hover {
-  background-color: #01a5ce;
-  border: 2px solid #01a5ce;
-  border-radius: 25px;
+  background-color: #326273;
+  padding-top: 3rem;
+  min-height: 100vh;
 }
 .container {
-  padding: 3.5rem;
+  padding: 4rem;
 }
 </style>

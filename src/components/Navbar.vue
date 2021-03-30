@@ -1,6 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand" href="">My Recipe App</a>
+    <a class="navbar-brand" href=""
+      ><img class="nav-logo" src="../assets/logo.svg" /> My Recipe App</a
+    >
     <button
       class="navbar-toggler"
       type="button"
@@ -12,7 +14,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="#/my-recipes">My Recipes</a>
@@ -21,13 +23,22 @@
           <a class="nav-link" href="#/add-recipe">Add New Recipe</a>
         </li>
       </ul>
-    </div>
+    </div> -->
   </nav>
 </template>
 
 <style scoped>
 .navbar {
-  background-color: none;
-  padding: 1rem;
+  padding: 1rem 0.5rem 0.5rem 2rem;
+}
+.navbar-brand,
+.nav-link {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.nav-logo {
+  width: 20%;
+  margin-right: 0.5rem;
 }
 </style>
