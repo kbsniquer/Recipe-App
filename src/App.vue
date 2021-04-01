@@ -23,6 +23,13 @@ export default {
 a {
   text-decoration: none;
 }
+h1 {
+  padding-top: 2rem;
+  color: #326273;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: aqua;
+}
 #app {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
@@ -35,5 +42,21 @@ a {
 }
 .container {
   padding: 4rem;
+}
+.btn {
+  background-color: transparent;
+  color: #d35f2d;
+  border: 2px solid #d35f2d;
+  padding: 10px 20px;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  border-radius: 25px;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+.btn:hover {
+  background-color: #d35f2d;
+  border: 2px solid #d35f2d;
+  color: white;
+  border-radius: 25px;
 }
 </style>

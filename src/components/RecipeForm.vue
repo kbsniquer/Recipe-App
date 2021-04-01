@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="recipeContainer">
+      <h1>Add New Recipe</h1>
       <form @submit.prevent="addRecipe()">
         <!-- Recipe title form group with label & input -->
         <div class="form-row p-2">
@@ -168,22 +169,6 @@ select {
 label {
   display: inline-block;
   font-size: 1.25rem;
-}
-.btn {
-  background-color: transparent;
-  color: #d35f2d;
-  border: 2px solid #d35f2d;
-  padding: 10px 20px;
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-  border-radius: 25px;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-}
-.btn:hover {
-  background-color: #d35f2d;
-  border: 2px solid #d35f2d;
-  color: white;
-  border-radius: 25px;
 }
 .recipeContainer,
 .recipeContainerLabel h1 span {
