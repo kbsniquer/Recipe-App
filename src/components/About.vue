@@ -2,19 +2,17 @@
   <div class="container">
     <div class="aboutContainer">
       <div class="aboutText">
-        <h1>Welcome to Recipe App</h1>
+        <h1>Welcome to My Recipe App</h1>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+          My Recipe App is a simple app where you can add and view your recipes.
+          This project was built with Vue.js & Bootstrap, so that I can practice
+          using those tools. :-)
         </p>
-        <button class="btn">Let's Get Started</button>
+        <p>
+          If you see any issues or bugs, please feel free to contact me at
+          kbsniquer@gmail.com. Hope you enjoy adding & seeing your recipes!
+        </p>
+        <button class="btn" @click="goToAddRecipe">Let's Get Started</button>
       </div>
     </div>
   </div>
@@ -24,12 +22,23 @@
 export default {
   name: "About",
   title: "Recipe App",
+  methods: {
+    goToAddRecipe: function() {
+      this.$router.push("/add-recipe");
+    },
+  },
 };
 </script>
 
 <style scoped>
+h1 {
+  font-size: 2rem;
+}
+.btn {
+  margin-top: 1rem;
+}
 .aboutText {
-  padding: 3rem;
+  padding: 2rem;
 }
 .aboutContainer {
   background-color: #fcfcfc;

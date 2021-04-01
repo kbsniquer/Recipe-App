@@ -1,5 +1,5 @@
 <template>
-  <div class="recipe shadow-sm p-5">
+  <div class="recipe shadow-sm p-4">
     <div
       class="card"
       v-for="(recipe, index) in this.$store.getters.recipes"
@@ -8,7 +8,7 @@
       <h1 class="recipeTitle">
         {{ recipe.title }}
       </h1>
-      <div class="row p-3">
+      <div class="row">
         <div class="col-6">
           <div class="recipeTime">
             <i class="far fa-clock"></i>
@@ -22,12 +22,14 @@
           </div>
         </div>
       </div>
+      <h2>Recipe Instructions</h2>
       <p class="recipeDesc">
         {{ recipe.desc }}
       </p>
+      <h2>Recipe Ingredients</h2>
       <ul class="recipeList">
         <li v-for="(ing, index) in recipe.ingredients" :key="index">
-          {{ ing.value }}
+          <i class="fas fa-check"></i> {{ ing.value }}
         </li>
       </ul>
     </div>
@@ -41,8 +43,15 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  color: #d35f2d;
+}
 .card {
   padding: 1rem;
+  margin-bottom: 1rem;
+}
+.card:last-child {
+  margin-bottom: 0;
 }
 .recipeTitle {
   font-size: 3rem;
@@ -53,13 +62,19 @@ export default {
 .recipeCategory {
   text-align: left;
 }
+.recipeTime,
+.recipeTime {
+  padding-bottom: 2rem;
+}
 .recipeDesc {
   margin: 0 auto;
   width: 75%;
+  padding-bottom: 1rem;
 }
 .recipeList {
   display: inline-block;
   list-style-type: none;
   padding-right: 20px;
+  column-count: 2;
 }
 </style>
