@@ -53,8 +53,6 @@ export default {
   background-color: #fcfcfc;
   color: #357266;
   padding-bottom: 2rem;
-}
-.recipeContainer {
   border-radius: 0.75rem;
   box-shadow: 0px 8px 15px -8px rgba(64, 67, 97, 0.5);
   margin: 0;
