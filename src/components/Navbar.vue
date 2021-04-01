@@ -1,5 +1,8 @@
 <template>
-  <nav class="navbar navbar-dark navbar-expand-md fixed-top">
+  <nav
+    class="navbar navbar-dark navbar-expand-md fixed-top"
+    :class="scrolled ? 'scroll' : ''"
+  >
     <a class="navbar-brand" href=""
       ><img class="nav-logo" src="../assets/logo.svg" /> My Recipe App</a
     >
@@ -27,6 +30,27 @@
   </nav>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      scrolled: true,
+    };
+  },
+  methods: {
+    handleScroll() {
+      this.scrolled = window.scrollY > 0;
+    },
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+};
+</script>
+
 <style scoped>
 .navbar {
   padding: 1rem 0.5rem 0.5rem 2rem;
@@ -49,5 +73,9 @@
 .navbar-toggler {
   color: white;
   border: 0;
+}
+.scroll {
+  box-shadow: 0px 8px 15px -8px rgba(64, 67, 97, 0.75);
+  /* padding: 1rem; */
 }
 </style>
