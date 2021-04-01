@@ -1,19 +1,7 @@
 <template>
   <div class="container">
-    <div class="recipeContainerLabel">
-      <h1>
-        <span>Add New Recipe</span>
-        <a href="#/my-recipes"
-          ><span
-            class="disabledAddNew"
-            style="background-color: #357266; color: white;"
-            >My Recipes</span
-          ></a
-        >
-      </h1>
-    </div>
     <div class="recipeContainer">
-      <form @submit.prevent="addRecipe()" class="p-3">
+      <form @submit.prevent="addRecipe()">
         <!-- Recipe title form group with label & input -->
         <div class="form-row p-2">
           <div class="form-group col-md-12">
@@ -29,8 +17,8 @@
           </div>
         </div>
         <!-- Row with dropdowns for types of recipes & cook times -->
-        <div class="row">
-          <div class="col-6">
+        <div class="row dropdowns">
+          <div class="col-12 col-sm-6">
             <label for="recipeCookTimeDropdown">Cook Time</label>
             <select name="recipeCookTimeDropdown" v-model="newRecipeTime">
               <option
@@ -42,8 +30,8 @@
             </select>
           </div>
 
-          <div class="col-6">
-            <label for="recipeCookTimeDropdown">Recipe Category</label>
+          <div class="col-12 col-sm-6">
+            <label for="recipeCCategoryDropdown">Category</label>
             <select name="recipeCategoryDropdown" v-model="newRecipeCat">
               <option
                 class="dropdown-item"
@@ -167,7 +155,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 form {
-  padding-top: 50px;
+  padding: 1rem;
   width: 75%;
   margin: 0 auto;
   color: #d35f2d;
@@ -202,22 +190,28 @@ label {
   background-color: #fcfcfc;
 }
 .recipeContainer {
-  border-radius: 0 0.75rem 0.75rem 0.75rem;
+  border-radius: 0.75rem;
   box-shadow: 0px 8px 15px -8px rgba(64, 67, 97, 0.5);
-}
-.recipeContainerLabel {
-  text-align: left;
-  text-transform: uppercase;
-  display: inline;
-}
-.recipeContainerLabel h1 span {
-  padding: 1rem;
-  margin-right: 1rem;
-  font-size: 1.5rem;
-  border-radius: 0.5rem 0.5rem 0 0;
-  color: #d35f2d;
 }
 .control-label {
   float: left;
+}
+@media only screen and (max-width: 800px) {
+  select {
+    margin: 0;
+    padding: 0.5rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .dropdowns div {
+    padding: 0.5rem;
+    text-align: left;
+  }
+  .dropdowns label {
+    padding: 0.5rem;
+  }
 }
 </style>
