@@ -14,12 +14,15 @@
       </div>
       <div v-if="this.$store.getters.recipes.length != 0">
         <h1>My Recipes</h1>
+        <div>
+          <p>
+            Yum! View your added recipes below. <br />
+            Be sure to scroll to see all of your recipes.
+          </p>
+          <p><i class="fa fa-angle-double-down"></i></p>
+        </div>
         <div class="overflow-auto">
           <RecipeCard />
-        </div>
-        <div>
-          <p class="pt-5 scrollMore">Scroll for more</p>
-          <p><i class="fa fa-angle-double-down"></i></p>
         </div>
       </div>
     </div>
