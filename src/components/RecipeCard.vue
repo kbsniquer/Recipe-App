@@ -77,4 +77,26 @@ h2 {
   padding-right: 20px;
   column-count: 2;
 }
+@media only screen and (max-width: 500px) {
+  h2 {
+    font-size: 1rem;
+  }
+  li {
+    font-size: 0.75rem;
+  }
+  .recipeList {
+    padding: 0;
+  }
+  .recipeTitle {
+    font-size: 1.5rem;
+  }
+  .recipeTime,
+  .recipeCategory {
+    font-size: 0.75rem;
+  }
+  .recipeDesc {
+    width: 100%;
+    font-size: 0.75rem;
+  }
+}
 </style>

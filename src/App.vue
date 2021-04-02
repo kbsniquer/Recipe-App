@@ -59,4 +59,13 @@ h1 {
   color: white;
   border-radius: 25px;
 }
+
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 1rem;
+  }
+  #app {
+    padding-top: 4rem;
+  }
+}
 </style>

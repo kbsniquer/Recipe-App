@@ -76,6 +76,21 @@ export default {
 }
 .scroll {
   box-shadow: 0px 8px 15px -8px rgba(64, 67, 97, 0.75);
-  /* padding: 1rem; */
+}
+@media only screen and (max-width: 500px) {
+  .navbar {
+    padding: 0;
+  }
+  .navbar-brand {
+    width: 75%;
+    text-align: left;
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 1rem 0 0 1rem;
+  }
+  .nav-logo {
+    width: 20%;
+    margin-right: 0.25rem;
+  }
 }
 </style>
