@@ -22,16 +22,16 @@
           </div>
         </div>
       </div>
-      <h2>Recipe Instructions</h2>
-      <p class="recipeDesc">
-        {{ recipe.desc }}
-      </p>
       <h2>Recipe Ingredients</h2>
       <ul class="recipeList">
         <li v-for="(ing, index) in recipe.ingredients" :key="index">
           <i class="fas fa-check"></i> {{ ing.value }}
         </li>
       </ul>
+      <h2>Recipe Instructions</h2>
+      <p class="recipeDesc">
+        {{ recipe.desc }}
+      </p>
     </div>
   </div>
 </template>
