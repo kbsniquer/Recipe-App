@@ -2,7 +2,7 @@
   <div class="container">
     <div class="recipeContainer">
       <div class="p-5" v-if="hasNotEnteredRecipe">
-        <h1 class="emptyRecipeH1">
+        <h1 class="emptyRecipeH1 animate__animated animate__bounce">
           {{ emptyRecipeH1 }}
         </h1>
         <p class="emptyRecipeMsg">
@@ -64,11 +64,14 @@ export default {
   box-shadow: 0px 8px 15px -8px rgba(64, 67, 97, 0.5);
   margin: 0;
 }
+.emptyRecipeH1 {
+  font-size: 4rem;
+}
 .emptyRecipeMsg {
   margin: 0 auto;
   width: 75%;
   padding-bottom: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 .overflow-auto {
   max-height: 500px;
